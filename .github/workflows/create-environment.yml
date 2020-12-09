@@ -17,7 +17,7 @@ jobs:
         lfs: true
 
     - name: create-environment action
-      uses: microsoft/powerplatform-actions/create-environment@v0
+      uses: microsoft/powerplatform-actions/create-environment@3a66fd4
       with:
         user-name: 'sbhalgat@ppdevtools.onmicrosoft.com'
         password-secret: ${{ secrets.password }}
