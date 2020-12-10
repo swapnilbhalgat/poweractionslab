@@ -1,11 +1,11 @@
-name: create-environment
-# Create environment in your tenant
+name: crud-environment
+# CRUD operations for admin environment
 
 on:
   workflow_dispatch:    # allow for manual workflow triggering as needed
 
 jobs:
-  create:
+  crud:
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
@@ -31,4 +31,4 @@ jobs:
         with:
           environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
           user-name: 'sbhalgat@ppdevtools.onmicrosoft.com'
-          password-secret: ${{ secrets.PASSWORD_PPDEVTOOLS }}
+          password-secret: ${{ secrets.password }}
