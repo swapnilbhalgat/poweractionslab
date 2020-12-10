@@ -30,7 +30,7 @@ jobs:
         domain: test-pizza
 
     - name: delete-environment action
-      uses: microsoft/powerplatform-actions/create-environment@7cbffc7
+      uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
       with:
         environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
         user-name: ${{ env.WF_USERNAME }}
