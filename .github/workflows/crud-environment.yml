@@ -15,20 +15,20 @@ jobs:
       with:
         lfs: true
 
-      - name: create-environment action
-        uses: microsoft/powerplatform-actions/create-environment@7cbffc7
-        id: create-test-pizza
-        with:
-          user-name: 'sbhalgat@ppdevtools.onmicrosoft.com'
-          password-secret: ${{ secrets.password }}
-          name: newEnvironment
-          type: Sandbox
-          region: unitedstates
-          domain: test-pizza
+    - name: create-environment action
+      uses: microsoft/powerplatform-actions/create-environment@7cbffc7
+      id: create-test-pizza
+      with:
+        user-name: 'sbhalgat@ppdevtools.onmicrosoft.com'
+        password-secret: ${{ secrets.password }}
+        name: newEnvironment
+        type: Sandbox
+        region: unitedstates
+        domain: test-pizza
 
-      - name: delete-environment action
-        uses: microsoft/powerplatform-actions/create-environment@7cbffc7
-        with:
-          environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
-          user-name: 'sbhalgat@ppdevtools.onmicrosoft.com'
-          password-secret: ${{ secrets.password }}
+    - name: delete-environment action
+      uses: microsoft/powerplatform-actions/create-environment@7cbffc7
+      with:
+        environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
+        user-name: 'sbhalgat@ppdevtools.onmicrosoft.com'
+        password-secret: ${{ secrets.password }}
