@@ -14,7 +14,7 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
-    - uses: actions/checkout@sbhalgat/addCatalogActions
+    - uses: actions/checkout@09844c507eaaca256366791407e85f04dfcd5d93
       with:
         lfs: true
 
