@@ -14,30 +14,30 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
-    - uses: actions/checkout@09844c507eaaca256366791407e85f04dfcd5d93
+    - uses: actions/checkout@main
       with:
         lfs: true
 
-    - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog
-      id: submit-catalog-pizza
-      with:
-        user-name: ${{ env.WF_USERNAME }}
-        password-secret: ${{ secrets.password }}
-        path: ../../submission.json
-        solution-zip: ../../MscrmToolsPCFControls.zip
-        poll-status: true
-
-    # - name: create-environment action
-    #   uses: microsoft/powerplatform-actions/create-environment@7cbffc7
-    #   id: create-test-pizza
+    # - name: submit-catalog action
+    #   uses: microsoft/powerplatform-actions/submit-catalog
+    #   id: submit-catalog-pizza
     #   with:
     #     user-name: ${{ env.WF_USERNAME }}
     #     password-secret: ${{ secrets.password }}
-    #     name: newEnvironment
-    #     type: Sandbox
-    #     region: unitedstates
-    #     domain: test-pizza
+    #     path: ../../submission.json
+    #     solution-zip: ../../MscrmToolsPCFControls.zip
+    #     poll-status: true
+
+    - name: create-environment action
+      uses: microsoft/powerplatform-actions/create-environment
+      id: create-test-pizza
+      with:
+        user-name: ${{ env.WF_USERNAME }}
+        password-secret: ${{ secrets.password }}
+        name: newEnvironment
+        type: Sandbox
+        region: unitedstates
+        domain: test-pizza
 
     # - name: delete-environment action
     #   uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
