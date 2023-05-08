@@ -14,24 +14,34 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         lfs: true
 
-    - name: create-environment action
-      uses: microsoft/powerplatform-actions/create-environment@7cbffc7
-      id: create-test-pizza
+    - name: submit-catalog action
+      uses: microsoft/powerplatform-actions/submit-catalog@09844c507eaaca256366791407e85f04dfcd5d93
+      id: submit-catalog-pizza
       with:
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
-        name: newEnvironment
-        type: Sandbox
-        region: unitedstates
-        domain: test-pizza
+        path: ../../submission.json
+        solution-zip: ../../MscrmToolsPCFControls.zip
+        poll-status: true
 
-    - name: delete-environment action
-      uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
-      with:
-        environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
-        user-name: ${{ env.WF_USERNAME }}
-        password-secret: ${{ secrets.password }}
+    # - name: create-environment action
+    #   uses: microsoft/powerplatform-actions/create-environment@7cbffc7
+    #   id: create-test-pizza
+    #   with:
+    #     user-name: ${{ env.WF_USERNAME }}
+    #     password-secret: ${{ secrets.password }}
+    #     name: newEnvironment
+    #     type: Sandbox
+    #     region: unitedstates
+    #     domain: test-pizza
+
+    # - name: delete-environment action
+    #   uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
+    #   with:
+    #     environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
+    #     user-name: ${{ env.WF_USERNAME }}
+    #     password-secret: ${{ secrets.password }}
