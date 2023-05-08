@@ -14,12 +14,12 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@sbhalgat/addCatalogActions
       with:
         lfs: true
 
     - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog@09844c507eaaca256366791407e85f04dfcd5d93
+      uses: microsoft/powerplatform-actions/submit-catalog
       id: submit-catalog-pizza
       with:
         user-name: ${{ env.WF_USERNAME }}
