@@ -24,8 +24,8 @@ jobs:
       with:
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
-        path: ../../submission.json
-        solution-zip: ../../MscrmToolsPCFControls.zip
+        path: ./submission.json
+        solution-zip: ./MscrmToolsPCFControls.zip
         poll-status: true
 
     # - name: create-environment action
