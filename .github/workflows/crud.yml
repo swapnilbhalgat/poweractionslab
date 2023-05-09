@@ -18,26 +18,26 @@ jobs:
       with:
         lfs: true
 
-    # - name: submit-catalog action
-    #   uses: microsoft/powerplatform-actions/submit-catalog
-    #   id: submit-catalog-pizza
-    #   with:
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     path: ../../submission.json
-    #     solution-zip: ../../MscrmToolsPCFControls.zip
-    #     poll-status: true
-
-    - name: create-environment action
-      uses: microsoft/powerplatform-actions/create-environment@main
-      id: create-test-pizza
+    - name: submit-catalog action
+      uses: microsoft/powerplatform-actions/submit-catalog@sbhalgat/addCatalogActions
+      id: submit-catalog-pizza
       with:
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
-        name: newEnvironment
-        type: Sandbox
-        region: unitedstates
-        domain: test-pizza
+        path: ../../submission.json
+        solution-zip: ../../MscrmToolsPCFControls.zip
+        poll-status: true
+
+    # - name: create-environment action
+    #   uses: microsoft/powerplatform-actions/create-environment@main
+    #   id: create-test-pizza
+    #   with:
+    #     user-name: ${{ env.WF_USERNAME }}
+    #     password-secret: ${{ secrets.password }}
+    #     name: newEnvironment
+    #     type: Sandbox
+    #     region: unitedstates
+    #     domain: test-pizza
 
     # - name: delete-environment action
     #   uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
