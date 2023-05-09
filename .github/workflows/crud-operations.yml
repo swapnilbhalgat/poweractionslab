@@ -19,9 +19,10 @@ jobs:
         lfs: true
 
     - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog@6f4b68bdf20ee67d1feb091640cc160aabafa125
+      uses: microsoft/powerplatform-actions/submit-catalog@c9895a35a381b15da049fb38ba4ce69cacdf20fb
       id: submit-catalog-pizza
       with:
+        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
         path: ./submission.json
