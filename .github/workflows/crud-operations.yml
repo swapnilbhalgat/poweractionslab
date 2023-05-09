@@ -18,27 +18,47 @@ jobs:
       with:
         lfs: true
 
-    - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog@c9895a35a381b15da049fb38ba4ce69cacdf20fb
-      id: submit-catalog-pizza
+    - name: install-catalog action
+      uses: microsoft/powerplatform-actions/install-catalog@c9895a35a381b15da049fb38ba4ce69cacdf20fb
+      id: install-catalog-pizza
       with:
         environment-url: 'https://org610c5f1c.crm.dynamics.com/'
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
-        path: ./submission.json
-        solution-zip: ./MscrmToolsPCFControls.zip
+        catalog-item-id: '908d263a-57a6-47b2-8b39-ddf575cabcf3'
+        target-url: 'https://paul-dev.crm.dynamics.com/'
         poll-status: true
 
-    # - name: create-environment action
-    #   uses: microsoft/powerplatform-actions/create-environment@main
-    #   id: create-test-pizza
-    #   with:
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     name: newEnvironment
-    #     type: Sandbox
-    #     region: unitedstates
-    #     domain: test-pizza
+    - name: catalog-status action
+      uses: microsoft/powerplatform-actions/catalog-status@c9895a35a381b15da049fb38ba4ce69cacdf20fb
+      id: catalog-status-pizza
+      with:
+        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
+        user-name: ${{ env.WF_USERNAME }}
+        password-secret: ${{ secrets.password }}
+        tracking-id: '3c06d795-9dee-ed11-8849-0022482364e9'
+        type: 'submit'
+
+    - name: catalog-status action
+      uses: microsoft/powerplatform-actions/catalog-status@c9895a35a381b15da049fb38ba4ce69cacdf20fb
+      id: catalog-status-pizza-2
+      with:
+        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
+        user-name: ${{ env.WF_USERNAME }}
+        password-secret: ${{ secrets.password }}
+        tracking-id: '3c06d795-9dee-ed11-8849-0022482364e9'
+        type: 'Submit'
+
+    - name: create-environment action
+      uses: microsoft/powerplatform-actions/create-environment@main
+      id: create-test-pizza
+      with:
+        user-name: ${{ env.WF_USERNAME }}
+        password-secret: ${{ secrets.password }}
+        name: newEnvironment
+        type: Sandbox
+        region: unitedstates
+        domain: test-pizza
 
     # - name: delete-environment action
     #   uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
