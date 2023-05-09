@@ -19,7 +19,7 @@ jobs:
         lfs: true
 
     - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog@sbhalgat/addCatalogActions
+      uses: microsoft/powerplatform-actions/submit-catalog@09844c507eaaca256366791407e85f04dfcd5d93
       id: submit-catalog-pizza
       with:
         user-name: ${{ env.WF_USERNAME }}
