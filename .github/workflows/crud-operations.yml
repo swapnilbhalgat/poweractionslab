@@ -1,4 +1,4 @@
-name: crud-opeartions
+name: catalog-opeartions
 # CRUD operations for admin environment
 
 on:
@@ -19,50 +19,22 @@ jobs:
         lfs: true
 
     - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog@v0.10.6
-      id: submit-catalog-pizza
+      uses: microsoft/powerplatform-actions/submit-catalog@533c6a692e32b375cd0eda6d8a49b53843c14b83
+      id: submit-catalog-test
       with:
         environment-url: 'https://org610c5f1c.crm.dynamics.com/'
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
         path: ./submission.json
-        solution-zip: ./MscrmToolsPCFControls.zip
+        solution-zip: ./solution.zip
         poll-status: true
 
-    # - name: catalog-status action
-    #   uses: microsoft/powerplatform-actions/catalog-status@c9895a35a381b15da049fb38ba4ce69cacdf20fb
-    #   id: catalog-status-pizza
-    #   with:
-    #     environment-url: 'https://org610c5f1c.crm.dynamics.com/'
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     tracking-id: '3c06d795-9dee-ed11-8849-0022482364e9'
-    #     type: 'submit'
-
-    # - name: catalog-status action
-    #   uses: microsoft/powerplatform-actions/catalog-status@c9895a35a381b15da049fb38ba4ce69cacdf20fb
-    #   id: catalog-status-pizza-2
-    #   with:
-    #     environment-url: 'https://org610c5f1c.crm.dynamics.com/'
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     tracking-id: '3c06d795-9dee-ed11-8849-0022482364e9'
-    #     type: 'Submit'
-
-    # - name: create-environment action
-    #   uses: microsoft/powerplatform-actions/create-environment@main
-    #   id: create-test-pizza
-    #   with:
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     name: newEnvironment
-    #     type: Sandbox
-    #     region: unitedstates
-    #     domain: test-pizza
-
-    # - name: delete-environment action
-    #   uses: microsoft/powerplatform-actions/delete-environment@7cbffc7
-    #   with:
-    #     environment-url: ${{ steps.create-test-pizza.outputs.environment-url }}
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
+    - name: catalog-status action
+      uses: microsoft/powerplatform-actions/catalog-status@533c6a692e32b375cd0eda6d8a49b53843c14b83
+      id: catalog-status-test
+      with:
+        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
+        user-name: ${{ env.WF_USERNAME }}
+        password-secret: ${{ secrets.password }}
+        tracking-id: '453dbaf2-e6f5-ed11-8848-0022482364e9'
+        type: 'Install'
