@@ -26,6 +26,7 @@ jobs:
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
         path: ./submission.json
+        package-solution-zip-file: 'SolutionZipFile'
         solution-zip: ./solution.zip
         poll-status: true
 
