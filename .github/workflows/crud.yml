@@ -27,7 +27,7 @@ jobs:
         password-secret: ${{ secrets.password }}
         path: ./submission.json
         package-solution-zip-file: 'SolutionZipFile'
-        solution-zip: ./solution.zip
+        solution-zip: ./MscrmToolsPCFControls.zip
         poll-status: true
 
     - name: catalog-status action
