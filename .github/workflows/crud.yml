@@ -18,24 +18,34 @@ jobs:
       with:
         lfs: true
 
-    - name: submit-catalog action
-      uses: microsoft/powerplatform-actions/submit-catalog@533c6a692e32b375cd0eda6d8a49b53843c14b83
-      id: submit-catalog-test
-      with:
-        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
-        user-name: ${{ env.WF_USERNAME }}
-        password-secret: ${{ secrets.password }}
-        path: ./submission.json
-        package-solution-zip-file: 'SolutionZipFile'
-        solution-zip: ./MscrmToolsPCFControls.zip
-        poll-status: true
+    # - name: submit-catalog action
+    #   uses: microsoft/powerplatform-actions/submit-catalog@533c6a692e32b375cd0eda6d8a49b53843c14b83
+    #   id: submit-catalog-test
+    #   with:
+    #     environment-url: 'https://org610c5f1c.crm.dynamics.com/'
+    #     user-name: ${{ env.WF_USERNAME }}
+    #     password-secret: ${{ secrets.password }}
+    #     path: ./submission.json
+    #     package-solution-zip-file: 'SolutionZipFile'
+    #     solution-zip: ./MscrmToolsPCFControls.zip
+    #     poll-status: true
 
-    - name: catalog-status action
-      uses: microsoft/powerplatform-actions/catalog-status@533c6a692e32b375cd0eda6d8a49b53843c14b83
-      id: catalog-status-test
+    # - name: catalog-status action
+    #   uses: microsoft/powerplatform-actions/catalog-status@533c6a692e32b375cd0eda6d8a49b53843c14b83
+    #   id: catalog-status-test
+    #   with:
+    #     environment-url: 'https://org610c5f1c.crm.dynamics.com/'
+    #     user-name: ${{ env.WF_USERNAME }}
+    #     password-secret: ${{ secrets.password }}
+    #     tracking-id: '453dbaf2-e6f5-ed11-8848-0022482364e9'
+    #     type: 'Install'
+
+    - name: import-solution action
+      uses: microsoft/powerplatform-actions/import-solution@3cd1646152a4d5c16d7e4c442c658c4539ec8436
+      id: import-solution-test
       with:
         environment-url: 'https://org610c5f1c.crm.dynamics.com/'
         user-name: ${{ env.WF_USERNAME }}
         password-secret: ${{ secrets.password }}
-        tracking-id: '453dbaf2-e6f5-ed11-8848-0022482364e9'
-        type: 'Install' 
+        solution-file: ./MscrmToolsPCFControls.zip
+        run-asynchronously: true
