@@ -1,0 +1,13 @@
+{
+  "EnvironmentVariables": [
+    {
+      "SchemaName": "cr242_FactoidSiteURL",
+      "Value": ""
+    },
+    {
+      "SchemaName": "cr242_FactoidSiteURLBase",
+      "Value": ""
+    }
+  ],
+  "ConnectionReferences": []
+}

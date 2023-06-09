@@ -49,3 +49,17 @@ jobs:
         password-secret: ${{ secrets.password }}
         solution-file: ./MscrmToolsPCFControls.zip
         run-asynchronously: true
+        use-deployment-settings-file: True
+        deployment-settings-file: ./deploymentSettings.json
+
+    - name: import-solution action
+      uses: microsoft/powerplatform-actions/import-solution@d45fbf1fe20819f0eb66dd7e5af15ba6c322cd08
+      id: import-solution-test
+      with:
+        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
+        user-name: ${{ env.WF_USERNAME }}
+        password-secret: ${{ secrets.password }}
+        solution-file: ./MscrmToolsPCFControls.zip
+        run-asynchronously: true
+        use-deployment-settings-file: True
+        deployment-settings-file: ./deploymentSettings.json
