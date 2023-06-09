@@ -49,5 +49,5 @@ jobs:
         password-secret: ${{ secrets.password }}
         solution-file: ./MscrmToolsPCFControls.zip
         run-asynchronously: true
-        use-deployment-settings-file: TRUE
+        use-deployment-settings-file: TrUe
         deployment-settings-file: ./deploymentSettings.json
