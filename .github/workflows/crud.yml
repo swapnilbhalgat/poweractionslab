@@ -54,7 +54,7 @@ jobs:
 
     - name: import-solution action
       uses: microsoft/powerplatform-actions/import-solution@d45fbf1fe20819f0eb66dd7e5af15ba6c322cd08
-      id: import-solution-test
+      id: import-solution-test2
       with:
         environment-url: 'https://org610c5f1c.crm.dynamics.com/'
         user-name: ${{ env.WF_USERNAME }}
