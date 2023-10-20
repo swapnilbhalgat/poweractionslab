@@ -14,9 +14,13 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        lfs: true
+    - name: Perform a Pester test from command line
+      shell: pwsh
+      run: |
+          (Get-ItemProperty "HKLM:System\CurrentControlSet\Control\FileSystem").LongPathsEnabled
+    
+    - name: Install Power Platform Tools
+      uses: microsoft/powerplatform-actions/actions-install@v1
 
     # - name: submit-catalog action
     #   uses: microsoft/powerplatform-actions/submit-catalog@533c6a692e32b375cd0eda6d8a49b53843c14b83
@@ -45,4 +49,4 @@ jobs:
       id: unpack-solution-test
       with:
         solution-file: a/Test-Github-Pipeline/Test-Github-Pipeline/out/testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste/factoidSolution.zip
-        solution-foolder: a/Test-Github-Pipeline/Test-Github-Pipeline/out/testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste/factoidSolution
+        solution-folder: a/Test-Github-Pipeline/Test-Github-Pipeline/out/testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste/factoidSolution
