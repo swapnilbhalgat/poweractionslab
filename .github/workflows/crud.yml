@@ -40,14 +40,9 @@ jobs:
     #     tracking-id: '453dbaf2-e6f5-ed11-8848-0022482364e9'
     #     type: 'Install'
 
-    - name: import-solution action
-      uses: microsoft/powerplatform-actions/import-solution@3cd1646152a4d5c16d7e4c442c658c4539ec8436
-      id: import-solution-test
+    - name: unpack-solution action
+      uses: microsoft/powerplatform-actions/unpack-solution
+      id: unpack-solution-test
       with:
-        environment-url: 'https://org610c5f1c.crm.dynamics.com/'
-        user-name: ${{ env.WF_USERNAME }}
-        password-secret: ${{ secrets.password }}
-        solution-file: ./MscrmToolsPCFControls.zip
-        run-asynchronously: true
-        use-deployment-settings-file: TrUe
-        deployment-settings-file: ./deploymentSettings.json
+        solution-file: a/Test-Github-Pipeline/Test-Github-Pipeline/out/testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste/factoidSolution.zip
+        solution-foolder: a/Test-Github-Pipeline/Test-Github-Pipeline/out/testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste/factoidSolution
