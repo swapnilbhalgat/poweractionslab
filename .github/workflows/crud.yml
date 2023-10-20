@@ -48,5 +48,5 @@ jobs:
       uses: microsoft/powerplatform-actions/unpack-solution@v1
       id: unpack-solution-test
       with:
-        solution-file: "\\\\?\\D:\\a\\poweractionslab\\poweractionslab\\a\\Test-Github-Pipeline\\Test-Github-Pipeline\\out\\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\\factoidSolution.zip"
-        solution-folder: "\\\\?\\D:\\a\\poweractionslab\\poweractionslab\\a\\Test-Github-Pipeline\\Test-Github-Pipeline\\out\\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\\factoidSolution"
+        solution-file: "\\\\?\\\\a\\Test-Github-Pipeline\\Test-Github-Pipeline\\out\\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\\factoidSolution.zip"
+        solution-folder: "\\\\?\\\\a\\Test-Github-Pipeline\\Test-Github-Pipeline\\out\\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\\factoidSolution"
