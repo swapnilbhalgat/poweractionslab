@@ -1,5 +1,4 @@
-name: crud-opeartions
-# CRUD operations for admin environment
+name: solution-operations
 
 on:
   workflow_dispatch:    # allow for manual workflow triggering as needed
@@ -14,35 +13,13 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
-    - name: Perform a Pester test from command line
+    - name: Check if long paths are enabled
       shell: pwsh
       run: |
           (Get-ItemProperty "HKLM:System\CurrentControlSet\Control\FileSystem").LongPathsEnabled
     
     - name: Install Power Platform Tools
       uses: microsoft/powerplatform-actions/actions-install@v1
-
-    # - name: submit-catalog action
-    #   uses: microsoft/powerplatform-actions/submit-catalog@533c6a692e32b375cd0eda6d8a49b53843c14b83
-    #   id: submit-catalog-test
-    #   with:
-    #     environment-url: 'https://org610c5f1c.crm.dynamics.com/'
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     path: ./submission.json
-    #     package-solution-zip-file: 'SolutionZipFile'
-    #     solution-zip: ./MscrmToolsPCFControls.zip
-    #     poll-status: true
-
-    # - name: catalog-status action
-    #   uses: microsoft/powerplatform-actions/catalog-status@533c6a692e32b375cd0eda6d8a49b53843c14b83
-    #   id: catalog-status-test
-    #   with:
-    #     environment-url: 'https://org610c5f1c.crm.dynamics.com/'
-    #     user-name: ${{ env.WF_USERNAME }}
-    #     password-secret: ${{ secrets.password }}
-    #     tracking-id: '453dbaf2-e6f5-ed11-8848-0022482364e9'
-    #     type: 'Install'
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1

@@ -1,5 +1,4 @@
-name: catalog-opeartions
-# CRUD operations for admin environment
+name: catalog-operations
 
 on:
   workflow_dispatch:    # allow for manual workflow triggering as needed
