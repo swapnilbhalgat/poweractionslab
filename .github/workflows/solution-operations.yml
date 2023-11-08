@@ -24,11 +24,10 @@ jobs:
     - name: Run unpack solution action manually using powershell script
       shell: pwsh
       run: |
-        Get-ChildItem -Path Env:
-        $ghWorkspace = $env:GITHUB_WORKSPACE
-        Get-ChildItem \\?\$ghWorkspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip
+        $workspace = $env:GITHUB_WORKSPACE
+        Get-ChildItem \\?\$workspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip
         $pacPath = Get-ChildItem -Path Env:POWERPLATFORMTOOLS_PACPATH
-        & $pacPath.Value solution unpack -z \\?\$ghWorkspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\$ghWorkspace\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution
+        & $pacPath.Value solution unpack -z \\?\$workspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\$workspace\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1
