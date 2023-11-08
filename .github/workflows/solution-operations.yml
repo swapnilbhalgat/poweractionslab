@@ -24,8 +24,11 @@ jobs:
     - name: Run unpack solution action manually using powershell script
       shell: pwsh
       run: |
+        Get-ChildItem -Path Env:
+        $ghWorkspace = $env:GITHUB_WORKSPACE
+        $ghWorkspace
         $pacPath = Get-ChildItem -Path Env:POWERPLATFORMTOOLS_PACPATH
-        $pacPath.Value
+        $pacPath.Value solution unpack -z \\?\$ghWorkspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\$ghWorkspace\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1
