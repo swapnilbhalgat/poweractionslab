@@ -25,6 +25,7 @@ jobs:
       shell: pwsh
       run: |
         $pacPath = Get-ChildItem -Path Env:POWERPLATFORMTOOLS_PACPATH
+        $pacPath
         cd $pacPath
         ls
 
