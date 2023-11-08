@@ -25,8 +25,8 @@ jobs:
       shell: pwsh
       run: |
         $pacPath = process.env[PacPathEnvVarName]
-        $pacPath = $pacPath + "\pac.exe"
-        $pacPath solution unpack -z \\?\${{ github.workspace }}\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\${{ github.workspace }}\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution          
+        cd $pacPath
+        ls        
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1
