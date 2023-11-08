@@ -24,9 +24,9 @@ jobs:
     - name: Run unpack solution action manually using powershell script
       shell: pwsh
       run: |
-        $pacPath = process.env[PacPathEnvVarName]
+        $pacPath = Get-ChildItem -Path Env:POWERPLATFORMTOOLS_PACPATH
         cd $pacPath
-        ls        
+        ls
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1
