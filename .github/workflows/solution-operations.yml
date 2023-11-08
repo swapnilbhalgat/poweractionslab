@@ -28,7 +28,7 @@ jobs:
         $ghWorkspace = $env:GITHUB_WORKSPACE
         $ghWorkspace
         $pacPath = Get-ChildItem -Path Env:POWERPLATFORMTOOLS_PACPATH
-        $pacPath.Value solution unpack -z \\?\$ghWorkspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\$ghWorkspace\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution
+        & $pacPath.Value solution unpack -z \\?\$ghWorkspace\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\$ghWorkspace\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v1
