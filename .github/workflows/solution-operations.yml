@@ -21,6 +21,13 @@ jobs:
     - name: Install Power Platform Tools
       uses: microsoft/powerplatform-actions/actions-install@v1
 
+    - name: Run unpack solution action manually using cmd
+      shell: cmd
+      run: |
+        set workspace=%GITHUB_WORKSPACE%
+        set pacPath=%POWERPLATFORMTOOLS_PACPATH%
+        "%pacPath%" solution unpack -z \\?\%workspace%\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution.zip -f \\?\%workspace%\a\poweractionslab\poweractionslab\a\Test-Github-Pipeline\Test-Github-Pipeline\out\testetestetestetestetesttestetsetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteststetestetestetestetesteteste\factoidSolution
+
     - name: Run unpack solution action manually using powershell script
       shell: pwsh
       run: |
