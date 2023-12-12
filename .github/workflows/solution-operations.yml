@@ -13,6 +13,9 @@ jobs:
       WF_USERNAME: sbhalgat@ppdevtools.onmicrosoft.com
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
     - name: Check if long paths are enabled
       shell: pwsh
       run: |
